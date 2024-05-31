@@ -18,20 +18,53 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
         return view
     }()
     
-    lazy var textLabel: UILabel = {
+    lazy var headerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 186/255, blue: 135/255, alpha: 0.5)
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var topLabel: UILabel = {
         let label = UILabel()
-        label.text = "3D 가상 의류 피팅 서비스, Fit Magazine"
+        label.text = "Fit Magazine"
         label.textColor = .orange
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.numberOfLines = 1
-        label.font = .boldSystemFont(ofSize: 20)
-        label.backgroundColor = UIColor(red: 255/255, green: 186/255, blue: 135/255, alpha: 0.5)
-        label.layer.cornerRadius = 10
+        label.font = .boldSystemFont(ofSize: 30)
+        label.backgroundColor = .clear
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    lazy var imageView: UIImageView = {
+    lazy var bottomLabel: UILabel = {
+        let label = UILabel()
+        label.text = "3D 가상 의류 실착 서비스"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        label.font = .boldSystemFont(ofSize: 20)
+        label.backgroundColor = .clear
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var inputLabel: UILabel = {
+        let label = UILabel()
+        label.text = "사진 선택"
+        label.textColor = .darkGray
+        label.textAlignment = .center
+        label.layer.cornerRadius = 10
+        label.layer.masksToBounds = true
+        label.backgroundColor = .systemGray2
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        return label
+    }()
+    
+    lazy var firstInputView: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 10
         view.contentMode = .scaleAspectFit
@@ -51,9 +84,58 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
         return btn
     }()
     
+    lazy var secondInputView: UIImageView = {
+        let view = UIImageView()
+        view.layer.cornerRadius = 10
+        view.contentMode = .scaleAspectFit
+        view.backgroundColor = .systemGray5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var clothImageButton: UIButton = {
+        let btn = UIButton()
+        btn.layer.cornerRadius = 10
+        btn.backgroundColor = UIColor(red: 255/255, green: 186/255, blue: 135/255, alpha: 0.5)
+        btn.setTitle("의류 이미지 선택", for: .normal)
+        btn.setTitleColor(.orange, for: .normal)
+        btn.addTarget(self, action: #selector(userImageButton_touchUpInside), for: .touchUpInside)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
+    lazy var outfitCheckButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("실착 모습 확인", for: .normal)
+        btn.setTitleColor(.darkGray, for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        btn.backgroundColor = .systemGray2
+        btn.layer.cornerRadius = 10
+        btn.layer.masksToBounds = true
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
+    lazy var outputView: UIImageView = {
+        let view = UIImageView()
+        view.layer.cornerRadius = 10
+        view.contentMode = .scaleAspectFit
+        view.backgroundColor = .systemGray5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let image = UIImage(named: "miinji.jpg") {
+            view.image = image
+        } else {
+            print("이미지를 로드할 수 없습니다.")
+        }
+        
+        return view
+    }()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 242/255, green: 244/255, blue: 246/255, alpha: 1.0)
         
         SetView()
         Constraint()
@@ -69,24 +151,24 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
     
     @objc func userImageButton_touchUpInside(sender: UIButton) {
         print("userImageButton_touchUpInside 호출됨")
-        checkPhotoLibraryPermission()
+        checkPhotoLibraryPermission(sender: sender)
     }
     
-    func checkPhotoLibraryPermission() {
+    func checkPhotoLibraryPermission(sender: UIButton) {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
         case .authorized:
-            presentImagePicker()
+            presentImagePicker(sender: sender)
         case .denied, .restricted:
             showAlert("앨범 접근 권한이 필요합니다.")
         case .limited:
-            presentImagePicker()
+            presentImagePicker(sender: sender)
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization { status in
                 switch status {
                 case .authorized, .limited:
                     DispatchQueue.main.async {
-                        self.presentImagePicker()
+                        self.presentImagePicker(sender: sender)
                     }
                 case .denied, .restricted, .notDetermined:
                     DispatchQueue.main.async {
@@ -101,11 +183,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
         }
     }
     
-    func presentImagePicker() {
+    func presentImagePicker(sender: UIButton) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         imagePickerController.sourceType = .photoLibrary
+        imagePickerController.view.tag = sender == userImageButton ? 1 : 2
         present(imagePickerController, animated: true)
     }
     
@@ -117,10 +200,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
     
     // UIImagePickerControllerDelegate 메서드 - 이미지 선택 후 호출됨
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.editedImage] as? UIImage {
-            imageView.image = image
-        } else if let image = info[.originalImage] as? UIImage {
-            imageView.image = image
+        if let image = info[.editedImage] as? UIImage ?? info[.originalImage] as? UIImage {
+            if picker.view.tag == 1 {
+                firstInputView.image = image
+            } else if picker.view.tag == 2 {
+                secondInputView.image = image
+            }
         }
         dismiss(animated: true)
     }
@@ -134,8 +219,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
             scrollview.addSubview(view)
         }
         
-        [textLabel, imageView, userImageButton].forEach { view in
+        [headerView, firstInputView, userImageButton, secondInputView, clothImageButton, outputView, inputLabel, outfitCheckButton].forEach { view in
             contentView.addSubview(view)
+        }
+        
+        [topLabel, bottomLabel].forEach { view in
+            headerView.addSubview(view)
         }
     }
     
@@ -147,27 +236,77 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
         contentView.snp.makeConstraints { make in
             make.edges.equalTo(scrollview)
             make.width.equalTo(scrollview)
-            make.height.equalTo(800) // 스크롤 뷰 높이 설정
+            make.height.equalTo(1300)
         }
         
-        textLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(60)
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(-5)
+        headerView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(15)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(80)
         }
         
-        imageView.snp.makeConstraints { make in
-            make.top.equalTo(textLabel.snp.bottom).offset(20)
+        topLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview()
             make.leading.equalToSuperview().offset(5)
             make.trailing.equalToSuperview().offset(-5)
-            make.height.equalTo(250)
+            make.height.equalTo(headerView.snp.height).multipliedBy(0.5)
+        }
+        
+        bottomLabel.snp.makeConstraints { make in
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
+            make.height.equalTo(headerView.snp.height).multipliedBy(0.5)
+        }
+        
+        inputLabel.snp.makeConstraints { make in
+            make.top.equalTo(headerView.snp.bottom).offset(30)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(40)
+        }
+        
+        firstInputView.snp.makeConstraints { make in
+            make.top.equalTo(inputLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(200)
         }
         
         userImageButton.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(20)
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(-5)
-            make.height.equalTo(50)
+            make.top.equalTo(firstInputView.snp.bottom).offset(5)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(35)
+        }
+        
+        secondInputView.snp.makeConstraints { make in
+            make.top.equalTo(userImageButton.snp.bottom).offset(40)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(200)
+        }
+        
+        clothImageButton.snp.makeConstraints { make in
+            make.top.equalTo(secondInputView.snp.bottom).offset(5)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(35)
+        }
+        
+        outfitCheckButton.snp.makeConstraints { make in
+            make.top.equalTo(clothImageButton.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(40)
+        }
+        
+        outputView.snp.makeConstraints { make in
+            make.top.equalTo(outfitCheckButton.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(200)
         }
     }
 }
