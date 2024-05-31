@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A20704C02BFD95FE0078C9DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704BF2BFD95FE0078C9DE /* AppDelegate.swift */; };
+		A20704C22BFD95FE0078C9DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704C12BFD95FE0078C9DE /* SceneDelegate.swift */; };
+		A20704C42BFD95FE0078C9DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704C32BFD95FE0078C9DE /* ViewController.swift */; };
+		A20704C72BFD95FE0078C9DE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A20704C62BFD95FE0078C9DE /* Base */; };
+		A20704C92BFD95FF0078C9DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20704C82BFD95FF0078C9DE /* Assets.xcassets */; };
+		A20704CC2BFD95FF0078C9DE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A20704CB2BFD95FF0078C9DE /* Base */; };
+		A20704D72BFD95FF0078C9DE /* Fit_MagazineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704D62BFD95FF0078C9DE /* Fit_MagazineTests.swift */; };
+		A20704E12BFD95FF0078C9DE /* Fit_MagazineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704E02BFD95FF0078C9DE /* Fit_MagazineUITests.swift */; };
+		A20704E32BFD95FF0078C9DE /* Fit_MagazineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704E22BFD95FF0078C9DE /* Fit_MagazineUITestsLaunchTests.swift */; };
+		A20705052BFDC4D30078C9DE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A20705042BFDC4D30078C9DE /* SnapKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A20704D32BFD95FF0078C9DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A20704B42BFD95FE0078C9DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A20704BB2BFD95FE0078C9DE;
+			remoteInfo = "Fit Magazine";
+		};
+		A20704DD2BFD95FF0078C9DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A20704B42BFD95FE0078C9DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A20704BB2BFD95FE0078C9DE;
+			remoteInfo = "Fit Magazine";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A20704F52BFDC3420078C9DE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20704FE2BFDC3C10078C9DE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20705022BFDC3C60078C9DE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A20704BC2BFD95FE0078C9DE /* Fit Magazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fit Magazine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20704BF2BFD95FE0078C9DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A20704C12BFD95FE0078C9DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A20704C32BFD95FE0078C9DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A20704C62BFD95FE0078C9DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A20704C82BFD95FF0078C9DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A20704CB2BFD95FF0078C9DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A20704CD2BFD95FF0078C9DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20704D22BFD95FF0078C9DE /* Fit MagazineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fit MagazineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20704D62BFD95FF0078C9DE /* Fit_MagazineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fit_MagazineTests.swift; sourceTree = "<group>"; };
+		A20704DC2BFD95FF0078C9DE /* Fit MagazineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fit MagazineUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20704E02BFD95FF0078C9DE /* Fit_MagazineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fit_MagazineUITests.swift; sourceTree = "<group>"; };
+		A20704E22BFD95FF0078C9DE /* Fit_MagazineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fit_MagazineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A20704B92BFD95FE0078C9DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20705052BFDC4D30078C9DE /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20704CF2BFD95FF0078C9DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20704D92BFD95FF0078C9DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A20704B32BFD95FE0078C9DE = {
+			isa = PBXGroup;
+			children = (
+				A20704BE2BFD95FE0078C9DE /* Fit Magazine */,
+				A20704D52BFD95FF0078C9DE /* Fit MagazineTests */,
+				A20704DF2BFD95FF0078C9DE /* Fit MagazineUITests */,
+				A20704BD2BFD95FE0078C9DE /* Products */,
+				A20704F62BFDC3A90078C9DE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A20704BD2BFD95FE0078C9DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20704BC2BFD95FE0078C9DE /* Fit Magazine.app */,
+				A20704D22BFD95FF0078C9DE /* Fit MagazineTests.xctest */,
+				A20704DC2BFD95FF0078C9DE /* Fit MagazineUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A20704BE2BFD95FE0078C9DE /* Fit Magazine */ = {
+			isa = PBXGroup;
+			children = (
+				A20704BF2BFD95FE0078C9DE /* AppDelegate.swift */,
+				A20704C12BFD95FE0078C9DE /* SceneDelegate.swift */,
+				A20704C32BFD95FE0078C9DE /* ViewController.swift */,
+				A20704C52BFD95FE0078C9DE /* Main.storyboard */,
+				A20704C82BFD95FF0078C9DE /* Assets.xcassets */,
+				A20704CA2BFD95FF0078C9DE /* LaunchScreen.storyboard */,
+				A20704CD2BFD95FF0078C9DE /* Info.plist */,
+			);
+			path = "Fit Magazine";
+			sourceTree = "<group>";
+		};
+		A20704D52BFD95FF0078C9DE /* Fit MagazineTests */ = {
+			isa = PBXGroup;
+			children = (
+				A20704D62BFD95FF0078C9DE /* Fit_MagazineTests.swift */,
+			);
+			path = "Fit MagazineTests";
+			sourceTree = "<group>";
+		};
+		A20704DF2BFD95FF0078C9DE /* Fit MagazineUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A20704E02BFD95FF0078C9DE /* Fit_MagazineUITests.swift */,
+				A20704E22BFD95FF0078C9DE /* Fit_MagazineUITestsLaunchTests.swift */,
+			);
+			path = "Fit MagazineUITests";
+			sourceTree = "<group>";
+		};
+		A20704F62BFDC3A90078C9DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A20704BB2BFD95FE0078C9DE /* Fit Magazine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20704E62BFD95FF0078C9DE /* Build configuration list for PBXNativeTarget "Fit Magazine" */;
+			buildPhases = (
+				A20704B82BFD95FE0078C9DE /* Sources */,
+				A20704B92BFD95FE0078C9DE /* Frameworks */,
+				A20704BA2BFD95FE0078C9DE /* Resources */,
+				A20704F52BFDC3420078C9DE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fit Magazine";
+			packageProductDependencies = (
+				A20705042BFDC4D30078C9DE /* SnapKit */,
+			);
+			productName = "Fit Magazine";
+			productReference = A20704BC2BFD95FE0078C9DE /* Fit Magazine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A20704D12BFD95FF0078C9DE /* Fit MagazineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20704E92BFD95FF0078C9DE /* Build configuration list for PBXNativeTarget "Fit MagazineTests" */;
+			buildPhases = (
+				A20704CE2BFD95FF0078C9DE /* Sources */,
+				A20704CF2BFD95FF0078C9DE /* Frameworks */,
+				A20704D02BFD95FF0078C9DE /* Resources */,
+				A20705022BFDC3C60078C9DE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A20704D42BFD95FF0078C9DE /* PBXTargetDependency */,
+			);
+			name = "Fit MagazineTests";
+			packageProductDependencies = (
+			);
+			productName = "Fit MagazineTests";
+			productReference = A20704D22BFD95FF0078C9DE /* Fit MagazineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A20704DB2BFD95FF0078C9DE /* Fit MagazineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20704EC2BFD95FF0078C9DE /* Build configuration list for PBXNativeTarget "Fit MagazineUITests" */;
+			buildPhases = (
+				A20704D82BFD95FF0078C9DE /* Sources */,
+				A20704D92BFD95FF0078C9DE /* Frameworks */,
+				A20704DA2BFD95FF0078C9DE /* Resources */,
+				A20704FE2BFDC3C10078C9DE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A20704DE2BFD95FF0078C9DE /* PBXTargetDependency */,
+			);
+			name = "Fit MagazineUITests";
+			packageProductDependencies = (
+			);
+			productName = "Fit MagazineUITests";
+			productReference = A20704DC2BFD95FF0078C9DE /* Fit MagazineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A20704B42BFD95FE0078C9DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					A20704BB2BFD95FE0078C9DE = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					A20704D12BFD95FF0078C9DE = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = A20704BB2BFD95FE0078C9DE;
+					};
+					A20704DB2BFD95FF0078C9DE = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = A20704BB2BFD95FE0078C9DE;
+					};
+				};
+			};
+			buildConfigurationList = A20704B72BFD95FE0078C9DE /* Build configuration list for PBXProject "Fit Magazine" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A20704B32BFD95FE0078C9DE;
+			packageReferences = (
+				A20705032BFDC4D30078C9DE /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = A20704BD2BFD95FE0078C9DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A20704BB2BFD95FE0078C9DE /* Fit Magazine */,
+				A20704D12BFD95FF0078C9DE /* Fit MagazineTests */,
+				A20704DB2BFD95FF0078C9DE /* Fit MagazineUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A20704BA2BFD95FE0078C9DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20704C92BFD95FF0078C9DE /* Assets.xcassets in Resources */,
+				A20704CC2BFD95FF0078C9DE /* Base in Resources */,
+				A20704C72BFD95FE0078C9DE /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20704D02BFD95FF0078C9DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20704DA2BFD95FF0078C9DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A20704B82BFD95FE0078C9DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20704C42BFD95FE0078C9DE /* ViewController.swift in Sources */,
+				A20704C02BFD95FE0078C9DE /* AppDelegate.swift in Sources */,
+				A20704C22BFD95FE0078C9DE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20704CE2BFD95FF0078C9DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20704D72BFD95FF0078C9DE /* Fit_MagazineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20704D82BFD95FF0078C9DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20704E32BFD95FF0078C9DE /* Fit_MagazineUITestsLaunchTests.swift in Sources */,
+				A20704E12BFD95FF0078C9DE /* Fit_MagazineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A20704D42BFD95FF0078C9DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A20704BB2BFD95FE0078C9DE /* Fit Magazine */;
+			targetProxy = A20704D32BFD95FF0078C9DE /* PBXContainerItemProxy */;
+		};
+		A20704DE2BFD95FF0078C9DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A20704BB2BFD95FE0078C9DE /* Fit Magazine */;
+			targetProxy = A20704DD2BFD95FF0078C9DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A20704C52BFD95FE0078C9DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A20704C62BFD95FE0078C9DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A20704CA2BFD95FF0078C9DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A20704CB2BFD95FF0078C9DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A20704E42BFD95FF0078C9DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A20704E52BFD95FF0078C9DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A20704E72BFD95FF0078C9DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 644M9X6987;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fit Magazine/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 사진 라이브러리에 접근하려고 합니다.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhhyun.ios.Fit-Magazine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A20704E82BFD95FF0078C9DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 644M9X6987;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fit Magazine/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 사진 라이브러리에 접근하려고 합니다.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhhyun.ios.Fit-Magazine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A20704EA2BFD95FF0078C9DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 644M9X6987;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhhyun.ios.Fit-MagazineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fit Magazine.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fit Magazine";
+			};
+			name = Debug;
+		};
+		A20704EB2BFD95FF0078C9DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 644M9X6987;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhhyun.ios.Fit-MagazineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fit Magazine.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fit Magazine";
+			};
+			name = Release;
+		};
+		A20704ED2BFD95FF0078C9DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 644M9X6987;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhhyun.ios.Fit-MagazineUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fit Magazine";
+			};
+			name = Debug;
+		};
+		A20704EE2BFD95FF0078C9DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 644M9X6987;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhhyun.ios.Fit-MagazineUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fit Magazine";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A20704B72BFD95FE0078C9DE /* Build configuration list for PBXProject "Fit Magazine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20704E42BFD95FF0078C9DE /* Debug */,
+				A20704E52BFD95FF0078C9DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A20704E62BFD95FF0078C9DE /* Build configuration list for PBXNativeTarget "Fit Magazine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20704E72BFD95FF0078C9DE /* Debug */,
+				A20704E82BFD95FF0078C9DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A20704E92BFD95FF0078C9DE /* Build configuration list for PBXNativeTarget "Fit MagazineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20704EA2BFD95FF0078C9DE /* Debug */,
+				A20704EB2BFD95FF0078C9DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A20704EC2BFD95FF0078C9DE /* Build configuration list for PBXNativeTarget "Fit MagazineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20704ED2BFD95FF0078C9DE /* Debug */,
+				A20704EE2BFD95FF0078C9DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A20705032BFDC4D30078C9DE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A20705042BFDC4D30078C9DE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A20705032BFDC4D30078C9DE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A20704B42BFD95FE0078C9DE /* Project object */;
+}
