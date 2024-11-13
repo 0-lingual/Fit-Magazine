@@ -4,6 +4,9 @@ import Photos
 
 class SecondViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    // 다운로드된 OBJ 파일의 URL을 저장하는 변수 추가
+    var downloadedOBJFileURL: URL?
+
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -194,32 +197,24 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
             return
         }
         
-        let croppedUserImage = cropImage(userImage, toRect: CGRect(x: 0, y: 0, width: 200, height: 200))
-        let croppedClothImage = cropImage(clothImage, toRect: CGRect(x: 0, y: 0, width: 200, height: 200))
-        
-        // 3D 변환 메시지 창 표시
         let alert = UIAlertController(title: nil, message: "3D로 변환 중입니다...", preferredStyle: .alert)
         present(alert, animated: true)
-        
-        Task {
-            try? await Task.sleep(nanoseconds: 15 * 1_000_000_000)  // 15초 딜레이
-            
-            uploadImages(userImage: croppedUserImage ?? userImage, clothImage: croppedClothImage ?? clothImage) { success in
-                DispatchQueue.main.async {
-                    alert.dismiss(animated: true)  // 메시지 창 닫기
-                    if success {
-                        let thirdVC = ThirdViewController()
-                        self.navigationController?.pushViewController(thirdVC, animated: true)
-                    } else {
-                        self.showAlert("이미지 전송에 실패했습니다.")
-                    }
+
+        uploadImages(userImage: userImage, clothImage: clothImage) { success in
+            DispatchQueue.main.async {
+                alert.dismiss(animated: true)
+                if success {
+                    let thirdVC = ThirdViewController()
+                    thirdVC.objFileURL = self.downloadedOBJFileURL // 파일 경로 전달
+                    self.navigationController?.pushViewController(thirdVC, animated: true)
+                } else {
+                    self.showAlert("이미지 전송에 실패했습니다.")
                 }
             }
         }
     }
     
     private func uploadImages(userImage: UIImage, clothImage: UIImage, completion: @escaping (Bool) -> Void) {
-        // 여기에 백엔드 endpoint 적기
         guard let url = URL(string: "https://your-backend-url.com/api/upload") else {
             completion(false)
             return
@@ -241,6 +236,25 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
             }
 
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                self.downloadOBJFile(completion: completion) // 다운로드 함수 호출
+            } else {
+                completion(false)
+            }
+        }.resume()
+    }
+    
+    private func downloadOBJFile(completion: @escaping (Bool) -> Void) {
+        guard let url = URL(string: "https://your-backend-url.com/api/obj-file") else {
+            completion(false)
+            return
+        }
+
+        URLSession.shared.downloadTask(with: url) { location, response, error in
+            if let location = location, error == nil {
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let destinationURL = documentsURL.appendingPathComponent("output.obj")
+                try? FileManager.default.moveItem(at: location, to: destinationURL)
+                self.downloadedOBJFileURL = destinationURL
                 completion(true)
             } else {
                 completion(false)
