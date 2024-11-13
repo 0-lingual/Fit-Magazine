@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A20704C02BFD95FE0078C9DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704BF2BFD95FE0078C9DE /* AppDelegate.swift */; };
 		A20704C22BFD95FE0078C9DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704C12BFD95FE0078C9DE /* SceneDelegate.swift */; };
-		A20704C42BFD95FE0078C9DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704C32BFD95FE0078C9DE /* ViewController.swift */; };
+		A20704C42BFD95FE0078C9DE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704C32BFD95FE0078C9DE /* SecondViewController.swift */; };
 		A20704C72BFD95FE0078C9DE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A20704C62BFD95FE0078C9DE /* Base */; };
 		A20704C92BFD95FF0078C9DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20704C82BFD95FF0078C9DE /* Assets.xcassets */; };
 		A20704CC2BFD95FF0078C9DE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A20704CB2BFD95FF0078C9DE /* Base */; };
@@ -17,6 +17,9 @@
 		A20704E12BFD95FF0078C9DE /* Fit_MagazineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704E02BFD95FF0078C9DE /* Fit_MagazineUITests.swift */; };
 		A20704E32BFD95FF0078C9DE /* Fit_MagazineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20704E22BFD95FF0078C9DE /* Fit_MagazineUITestsLaunchTests.swift */; };
 		A20705052BFDC4D30078C9DE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A20705042BFDC4D30078C9DE /* SnapKit */; };
+		A2928A442CD35834001A68C1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2928A432CD35834001A68C1 /* FirstViewController.swift */; };
+		A2928A462CD35866001A68C1 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2928A452CD35866001A68C1 /* ThirdViewController.swift */; };
+		A2DF44452CE3583A004D9804 /* output2.obj in Resources */ = {isa = PBXBuildFile; fileRef = A2DF44442CE3583A004D9804 /* output2.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +76,7 @@
 		A20704BC2BFD95FE0078C9DE /* Fit Magazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fit Magazine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20704BF2BFD95FE0078C9DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A20704C12BFD95FE0078C9DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A20704C32BFD95FE0078C9DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A20704C32BFD95FE0078C9DE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		A20704C62BFD95FE0078C9DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A20704C82BFD95FF0078C9DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A20704CB2BFD95FF0078C9DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +86,9 @@
 		A20704DC2BFD95FF0078C9DE /* Fit MagazineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fit MagazineUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20704E02BFD95FF0078C9DE /* Fit_MagazineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fit_MagazineUITests.swift; sourceTree = "<group>"; };
 		A20704E22BFD95FF0078C9DE /* Fit_MagazineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fit_MagazineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A2928A432CD35834001A68C1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		A2928A452CD35866001A68C1 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		A2DF44442CE3583A004D9804 /* output2.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = output2.obj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 		A20704B32BFD95FE0078C9DE = {
 			isa = PBXGroup;
 			children = (
+				A2DF44442CE3583A004D9804 /* output2.obj */,
 				A20704BE2BFD95FE0078C9DE /* Fit Magazine */,
 				A20704D52BFD95FF0078C9DE /* Fit MagazineTests */,
 				A20704DF2BFD95FF0078C9DE /* Fit MagazineUITests */,
@@ -137,7 +144,9 @@
 			children = (
 				A20704BF2BFD95FE0078C9DE /* AppDelegate.swift */,
 				A20704C12BFD95FE0078C9DE /* SceneDelegate.swift */,
-				A20704C32BFD95FE0078C9DE /* ViewController.swift */,
+				A2928A432CD35834001A68C1 /* FirstViewController.swift */,
+				A20704C32BFD95FE0078C9DE /* SecondViewController.swift */,
+				A2928A452CD35866001A68C1 /* ThirdViewController.swift */,
 				A20704C52BFD95FE0078C9DE /* Main.storyboard */,
 				A20704C82BFD95FF0078C9DE /* Assets.xcassets */,
 				A20704CA2BFD95FF0078C9DE /* LaunchScreen.storyboard */,
@@ -290,6 +299,7 @@
 				A20704C92BFD95FF0078C9DE /* Assets.xcassets in Resources */,
 				A20704CC2BFD95FF0078C9DE /* Base in Resources */,
 				A20704C72BFD95FE0078C9DE /* Base in Resources */,
+				A2DF44452CE3583A004D9804 /* output2.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,9 +324,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A20704C42BFD95FE0078C9DE /* ViewController.swift in Sources */,
+				A20704C42BFD95FE0078C9DE /* SecondViewController.swift in Sources */,
 				A20704C02BFD95FE0078C9DE /* AppDelegate.swift in Sources */,
+				A2928A462CD35866001A68C1 /* ThirdViewController.swift in Sources */,
 				A20704C22BFD95FE0078C9DE /* SceneDelegate.swift in Sources */,
+				A2928A442CD35834001A68C1 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,10 +513,11 @@
 				DEVELOPMENT_TEAM = 644M9X6987;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fit Magazine/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앱에서 사진을 저장하기 위해 사진 라이브러리에 접근하려고 합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 사진 라이브러리에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -531,10 +544,11 @@
 				DEVELOPMENT_TEAM = 644M9X6987;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fit Magazine/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "앱에서 사진을 저장하기 위해 사진 라이브러리에 접근하려고 합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 사진 라이브러리에 접근하려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
