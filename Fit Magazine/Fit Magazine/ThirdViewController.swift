@@ -4,11 +4,13 @@ import SnapKit
 
 class ThirdViewController: UIViewController {
     
+    var objFileURL: URL? // SecondViewController에서 전달받을 URL
+
     lazy var sceneView: SCNView = {
         let sceneView = SCNView()
         sceneView.translatesAutoresizingMaskIntoConstraints = false
         sceneView.backgroundColor = .white
-        sceneView.allowsCameraControl = true
+        sceneView.allowsCameraControl = true // 카메라 제어 활성화
         return sceneView
     }()
     
@@ -24,11 +26,10 @@ class ThirdViewController: UIViewController {
         return button
     }()
     
-    var objFileURL: URL?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 1.0, green: 0.6, blue: 0.4, alpha: 1.0)
+        
         setupLayout()
         loadAndDisplayOBJFile()
     }
@@ -62,9 +63,11 @@ class ThirdViewController: UIViewController {
         
         do {
             let objNode = try SCNScene(url: url, options: nil).rootNode
+            
             let scene = SCNScene()
             scene.rootNode.addChildNode(objNode)
             
+            // Ambient Light 추가
             let ambientLight = SCNLight()
             ambientLight.type = .ambient
             ambientLight.color = UIColor(white: 0.5, alpha: 1.0)
@@ -72,6 +75,7 @@ class ThirdViewController: UIViewController {
             ambientLightNode.light = ambientLight
             scene.rootNode.addChildNode(ambientLightNode)
             
+            // Directional Light 추가
             let directionalLight = SCNLight()
             directionalLight.type = .directional
             directionalLight.color = UIColor(white: 1.0, alpha: 1.0)
@@ -79,10 +83,11 @@ class ThirdViewController: UIViewController {
             directionalLightNode.light = directionalLight
             directionalLightNode.eulerAngles = SCNVector3(-Float.pi / 3, -Float.pi / 4, 0)
             scene.rootNode.addChildNode(directionalLightNode)
-            
+
             sceneView.scene = scene
         } catch {
             showAlert("3D 모델을 불러올 수 없습니다. 오류: \(error)")
+            print("OBJ 파일 로드 실패:", error.localizedDescription)
         }
     }
     

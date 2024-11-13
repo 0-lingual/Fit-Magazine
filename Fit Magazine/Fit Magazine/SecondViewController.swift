@@ -4,8 +4,7 @@ import Photos
 
 class SecondViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // 다운로드된 OBJ 파일의 URL을 저장하는 변수 추가
-    var downloadedOBJFileURL: URL?
+    var downloadedOBJFileURL: URL? // 백엔드에서 다운로드한 obj 파일 URL 저장
 
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -178,34 +177,22 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         secondInputView.image = nil
     }
 
-    private func cropImage(_ image: UIImage, toRect rect: CGRect) -> UIImage? {
-        let scale = image.scale
-        let scaledRect = CGRect(
-            x: rect.origin.x * scale,
-            y: rect.origin.y * scale,
-            width: rect.width * scale,
-            height: rect.height * scale
-        )
-        
-        guard let cgImage = image.cgImage?.cropping(to: scaledRect) else { return nil }
-        return UIImage(cgImage: cgImage, scale: scale, orientation: image.imageOrientation)
-    }
-
     @objc private func showFitting() {
         guard let userImage = firstInputView.image, let clothImage = secondInputView.image else {
             showAlert("전신 이미지와 의류 이미지를 모두 선택해주세요.")
             return
         }
         
+        // 3D 변환 중 메시지 창 표시
         let alert = UIAlertController(title: nil, message: "3D로 변환 중입니다...", preferredStyle: .alert)
         present(alert, animated: true)
-
+        
         uploadImages(userImage: userImage, clothImage: clothImage) { success in
             DispatchQueue.main.async {
                 alert.dismiss(animated: true)
                 if success {
                     let thirdVC = ThirdViewController()
-                    thirdVC.objFileURL = self.downloadedOBJFileURL // 파일 경로 전달
+                    thirdVC.objFileURL = self.downloadedOBJFileURL // 전달할 URL
                     self.navigationController?.pushViewController(thirdVC, animated: true)
                 } else {
                     self.showAlert("이미지 전송에 실패했습니다.")
@@ -215,7 +202,8 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     private func uploadImages(userImage: UIImage, clothImage: UIImage, completion: @escaping (Bool) -> Void) {
-        guard let url = URL(string: "https://your-backend-url.com/api/upload") else {
+        guard let url = URL(string: "http://127.0.0.1:포트번호/api/upload") else {
+            print("Invalid URL")
             completion(false)
             return
         }
@@ -235,28 +223,21 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
                 return
             }
 
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                self.downloadOBJFile(completion: completion) // 다운로드 함수 호출
-            } else {
-                completion(false)
-            }
-        }.resume()
-    }
-    
-    private func downloadOBJFile(completion: @escaping (Bool) -> Void) {
-        guard let url = URL(string: "https://your-backend-url.com/api/obj-file") else {
-            completion(false)
-            return
-        }
-
-        URLSession.shared.downloadTask(with: url) { location, response, error in
-            if let location = location, error == nil {
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let data = data {
+                // 백엔드에서 받은 데이터로 obj 파일을 생성하고 파일 경로를 설정
                 let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                let destinationURL = documentsURL.appendingPathComponent("output.obj")
-                try? FileManager.default.moveItem(at: location, to: destinationURL)
-                self.downloadedOBJFileURL = destinationURL
-                completion(true)
+                let fileURL = documentsURL.appendingPathComponent("receivedModel.obj")
+                
+                do {
+                    try data.write(to: fileURL)
+                    self.downloadedOBJFileURL = fileURL // 파일 경로 저장
+                    completion(true)
+                } catch {
+                    print("Failed to save OBJ file: \(error)")
+                    completion(false)
+                }
             } else {
+                print("Upload failed with response code \((response as? HTTPURLResponse)?.statusCode ?? 0)")
                 completion(false)
             }
         }.resume()
