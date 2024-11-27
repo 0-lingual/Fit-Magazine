@@ -4,8 +4,6 @@ import Photos
 
 class SecondViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var downloadedOBJFileURL: URL? // 백엔드에서 다운로드한 obj 파일 URL 저장
-
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -177,33 +175,53 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         secondInputView.image = nil
     }
 
+    private func cropImage(_ image: UIImage, toRect rect: CGRect) -> UIImage? {
+        let scale = image.scale
+        let scaledRect = CGRect(
+            x: rect.origin.x * scale,
+            y: rect.origin.y * scale,
+            width: rect.width * scale,
+            height: rect.height * scale
+        )
+        
+        guard let cgImage = image.cgImage?.cropping(to: scaledRect) else { return nil }
+        return UIImage(cgImage: cgImage, scale: scale, orientation: image.imageOrientation)
+    }
+
     @objc private func showFitting() {
         guard let userImage = firstInputView.image, let clothImage = secondInputView.image else {
             showAlert("전신 이미지와 의류 이미지를 모두 선택해주세요.")
             return
         }
         
-        // 3D 변환 중 메시지 창 표시
+        let croppedUserImage = cropImage(userImage, toRect: CGRect(x: 0, y: 0, width: 200, height: 200))
+        let croppedClothImage = cropImage(clothImage, toRect: CGRect(x: 0, y: 0, width: 200, height: 200))
+        
+        // 3D 변환 메시지 창 표시
         let alert = UIAlertController(title: nil, message: "3D로 변환 중입니다...", preferredStyle: .alert)
         present(alert, animated: true)
         
-        uploadImages(userImage: userImage, clothImage: clothImage) { success in
-            DispatchQueue.main.async {
-                alert.dismiss(animated: true)
-                if success {
-                    let thirdVC = ThirdViewController()
-                    thirdVC.objFileURL = self.downloadedOBJFileURL // 전달할 URL
-                    self.navigationController?.pushViewController(thirdVC, animated: true)
-                } else {
-                    self.showAlert("이미지 전송에 실패했습니다.")
+        Task {
+            try? await Task.sleep(nanoseconds: 15 * 1_000_000_000)  // 15초 딜레이
+            
+            uploadImages(userImage: croppedUserImage ?? userImage, clothImage: croppedClothImage ?? clothImage) { success in
+                DispatchQueue.main.async {
+                    alert.dismiss(animated: true)  // 메시지 창 닫기
+                    if success {
+                        let thirdVC = ThirdViewController()
+                        self.navigationController?.pushViewController(thirdVC, animated: true)
+                    } else {
+                        self.showAlert("이미지 전송에 실패했습니다.")
+                    }
                 }
             }
         }
     }
     
     private func uploadImages(userImage: UIImage, clothImage: UIImage, completion: @escaping (Bool) -> Void) {
-        guard let url = URL(string: "http://127.0.0.1:포트번호/api/upload") else {
-            print("Invalid URL")
+        // 여기에 백엔드 endpoint 적기
+        guard let 
+                = URL(string: "https://your-backend-url.com/api/upload") else {
             completion(false)
             return
         }
@@ -223,21 +241,9 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
                 return
             }
 
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let data = data {
-                // 백엔드에서 받은 데이터로 obj 파일을 생성하고 파일 경로를 설정
-                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                let fileURL = documentsURL.appendingPathComponent("receivedModel.obj")
-                
-                do {
-                    try data.write(to: fileURL)
-                    self.downloadedOBJFileURL = fileURL // 파일 경로 저장
-                    completion(true)
-                } catch {
-                    print("Failed to save OBJ file: \(error)")
-                    completion(false)
-                }
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                completion(true)
             } else {
-                print("Upload failed with response code \((response as? HTTPURLResponse)?.statusCode ?? 0)")
                 completion(false)
             }
         }.resume()
@@ -272,4 +278,3 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(alertController, animated: true)
     }
 }
-

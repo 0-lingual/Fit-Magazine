@@ -4,8 +4,6 @@ import SnapKit
 
 class ThirdViewController: UIViewController {
     
-    var objFileURL: URL? // SecondViewController에서 전달받을 URL
-
     lazy var sceneView: SCNView = {
         let sceneView = SCNView()
         sceneView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +54,7 @@ class ThirdViewController: UIViewController {
     }
     
     private func loadAndDisplayOBJFile() {
-        guard let url = objFileURL else {
+        guard let url = Bundle.main.url(forResource: "output2", withExtension: "obj") else {
             showAlert("OBJ 파일을 찾을 수 없습니다.")
             return
         }
@@ -64,6 +62,7 @@ class ThirdViewController: UIViewController {
         do {
             let objNode = try SCNScene(url: url, options: nil).rootNode
             
+            // Scene 생성 및 조명 추가
             let scene = SCNScene()
             scene.rootNode.addChildNode(objNode)
             
@@ -97,4 +96,3 @@ class ThirdViewController: UIViewController {
         present(alertController, animated: true)
     }
 }
-
